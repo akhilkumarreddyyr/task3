@@ -1,0 +1,708 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f8fa;
+    color: #222;
+    line-height: 1.6;
+}
+
+
+
+.navbar {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    background: #0b2942;
+
+    color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+
+    list-style: none;
+
+    gap: 30px;
+}
+
+.nav-links a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffd166;
+}
+
+
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 120px 20px 50px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.55)
+        ),
+        url("world.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.subtitle {
+    color: #ffd166;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+
+    max-width: 700px;
+
+    margin: auto;
+}
+
+.hero-btn {
+    display: inline-block;
+
+    margin-top: 30px;
+
+    padding: 14px 32px;
+
+    background: #ff7a00;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 30px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #ff9d43;
+
+    transform: translateY(-4px);
+}
+
+
+
+section {
+    padding: 90px 7%;
+}
+
+section h2 {
+    text-align: center;
+
+    font-size: 40px;
+
+    color: #0b2942;
+
+    margin-bottom: 10px;
+}
+
+.section-description {
+    text-align: center;
+
+    color: #666;
+
+    font-size: 18px;
+
+    margin-bottom: 45px;
+}
+
+
+.destinations {
+    background: white;
+}
+
+
+/* CSS GRID */
+
+.destination-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+.destination-card {
+    background: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 5px 18px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.destination-card img {
+    width: 100%;
+
+    height: 210px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.destination-card h3 {
+    color: #0b2942;
+
+    font-size: 22px;
+
+    padding: 18px 18px 5px;
+}
+
+.destination-card p {
+    color: #666;
+
+    padding: 0 18px 20px;
+}
+
+
+
+
+.quiz-section {
+    background: #eef5f8;
+}
+
+.quiz-box {
+    max-width: 700px;
+
+    margin: auto;
+
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+.quiz-box h3 {
+    color: #0b2942;
+
+    font-size: 24px;
+
+    margin-bottom: 25px;
+}
+
+
+
+
+#answer-buttons {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.answer-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: 2px solid #0b2942;
+
+    background: white;
+
+    color: #0b2942;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.answer-btn:hover {
+    background: #0b2942;
+
+    color: white;
+}
+
+
+
+
+.answer-btn.correct {
+    background: #2a9d55;
+
+    color: white;
+
+    border-color: #2a9d55;
+}
+
+
+
+
+.answer-btn.wrong {
+    background: #e63946;
+
+    color: white;
+
+    border-color: #e63946;
+}
+
+
+
+
+#next-btn {
+    margin-top: 25px;
+
+    padding: 12px 30px;
+
+    border: none;
+
+    background: #ff7a00;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#next-btn:hover {
+    background: #0b2942;
+}
+
+
+
+
+#quiz-result {
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    color: #0b2942;
+}
+
+
+
+.weather-section {
+    background: white;
+}
+
+.weather-box {
+    max-width: 600px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: #f7f9fb;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+
+    text-align: center;
+}
+
+#cityInput {
+    width: 65%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 7px;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+#cityInput:focus {
+    border-color: #ff7a00;
+}
+
+#weatherBtn {
+    padding: 13px 20px;
+
+    border: none;
+
+    background: #0b2942;
+
+    color: white;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    transition: 0.3s;
+}
+
+#weatherBtn:hover {
+    background: #ff7a00;
+}
+
+#weatherResult {
+    margin-top: 30px;
+
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    min-height: 120px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+#cityName {
+    color: #0b2942;
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+#temperature {
+    font-size: 30px;
+
+    font-weight: bold;
+
+    color: #ff7a00;
+
+    margin: 10px;
+}
+
+#weatherDescription {
+    color: #666;
+
+    font-size: 17px;
+}
+
+
+
+footer {
+    background: #0b2942;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 40px 20px;
+}
+
+footer h2 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin: 20px 0;
+}
+
+.social-icons a {
+    width: 45px;
+
+    height: 45px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: white;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background: #ffd166;
+
+    transform: translateY(-5px);
+}
+
+.copyright {
+    color: #ccc;
+
+    font-size: 14px;
+}
+
+
+@media screen and (max-width: 1100px) {
+
+    .destination-grid {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 58px;
+    }
+}
+
+
+
+@media screen and (max-width: 850px) {
+
+    .destination-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .navbar {
+        padding: 18px 4%;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    #cityInput {
+        width: 60%;
+    }
+}
+
+
+
+@media screen and (max-width: 650px) {
+
+    /* Navigation */
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding-top: 150px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero p {
+        font-size: 17px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+
+        letter-spacing: 2px;
+    }
+
+
+    /* Sections */
+
+    section {
+        padding: 65px 5%;
+    }
+
+    section h2 {
+        font-size: 32px;
+    }
+
+
+    /* Destination Grid */
+
+    .destination-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .destination-card img {
+        height: 230px;
+    }
+
+
+    /* Quiz */
+
+    .quiz-box {
+        padding: 25px 18px;
+    }
+
+    #answer-buttons {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-box h3 {
+        font-size: 20px;
+    }
+
+
+    /* Weather */
+
+    .weather-box {
+        padding: 25px 15px;
+    }
+
+    #cityInput {
+        width: 100%;
+
+        margin-bottom: 12px;
+    }
+
+    #weatherBtn {
+        width: 100%;
+    }
+}
+
+
+
+@media screen and (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .nav-links {
+        gap: 8px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .quiz-box {
+        padding: 20px 12px;
+    }
+
+    .destination-card img {
+        height: 200px;
+    }
+}
